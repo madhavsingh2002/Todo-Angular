@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="todo-body card shadow p-3 mb-5 bg-body rounded w-50">
+      <h2 class="text-center mb-3">Todo-List using Angular 👨🏻‍💻</h2>
+      <form (ngSubmit)="handleSubmit()">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            name="task"
+            [(ngModel)]="task"
+            class="form-control"
+            placeholder="Enter Your Task"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="submit"
+          >
+            Add
+          </button>
+        </div>
+      </form>
+      <div class="todo-list">
+        <ul>
+          <li class="mb-3" *ngFor="let task of todo; let index = index">
+            {{ task }}
+            
+            <span
+              class="material-symbols-outlined"
+              style="cursor: pointer"
+              (click)="handleDelete(index)"
+            >
+              delete
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
