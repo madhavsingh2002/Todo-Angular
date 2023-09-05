@@ -5,8 +5,8 @@
         <div class="input-group mb-3">
           <input
             type="text"
-            name="task"
-            [(ngModel)]="task"
+            name="task" 
+           [(ngModel)]="task"
             class="form-control"
             placeholder="Enter Your Task"
           />
@@ -19,15 +19,17 @@
         </div>
       </form>
       <div class="todo-list">
-        <ul>
-          <li class="mb-3" *ngFor="let task of todo; let index = index">
-            {{ task }}
-            
+        <ul *ngFor="let task of todo; let index= index">
+          <!-- for displaying the todo -->
+         
+          <li class="mb-3"  >
+            {{task}}  
             <span
               class="material-symbols-outlined"
               style="cursor: pointer"
               (click)="handleDelete(index)"
             >
+            <!-- for deleting the todo.... -->
               delete
             </span>
           </li>
